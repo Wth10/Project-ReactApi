@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-export default function Index() {
+export default function Head() {
   const [searchInput, setSearchInput] = useState(true);
   const [mdOptionsToggle, setMdOptionsToggle] = useState(true);
   const [showMenu, setShowMenu] = useState(false);
@@ -44,51 +45,47 @@ export default function Index() {
               </div>
               <input
                 type="text"
-                placeholder="Search for products"
-                className="text-sm leading-none dark:text-gray-300 dark:bg-gray-900 text-gray-600 focus:outline-none"
+                placeholder=" Search...."
+                className="text-sm rounded ml-1 border border-transparent w-[29em] h-[2em] bg-white ring-1 ring-slate-900/10 hover:ring-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-sm text-slate-400 dark:bg-slate-800 dark:ring-0 dark:text-slate-300 dark:highlight-white/5 dark:hover:bg-slate-700"
               />
             </div>
           </div>
 
           {/* For md screen size */}
           {/* For large screens */}
-          <div className="dark:bg-gray-900 bg-gray-50 px-6 py-9">
+          <div className="dark:bg-gray-900 bg-gray-50 px-6 py-9  pb-6 border-b border-slate-200">
             <div className="container mx-auto flex items-center justify-between">
               <h1 className="md:w-2/12 font-mono text-2xl cursor-pointer text-gray-800 dark:text-white">
                 Listar De Filmes
               </h1>
               <ul className="hidden w-8/12 md:flex items-center justify-center space-x-8">
                 <li>
-                  <a
-                    href="javascript:void(0)"
+                  <Link
+                    to="/"
                     className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
                   >
                     Home
-                  </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/search"
+                    className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
+                  >
+                    Search
+                  </Link>
                 </li>
                 <li>
                   <a
                     href="javascript:void(0)"
                     className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
-                  >
-                    Furniture
-                  </a>
+                  ></a>
                 </li>
                 <li>
                   <a
                     href="javascript:void(0)"
                     className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
-                  >
-                    Lookbook
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="javascript:void(0)"
-                    className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
-                  >
-                    Support
-                  </a>
+                  ></a>
                 </li>
               </ul>
               <div className="md:w-2/12 justify-end flex items-center space-x-4 xl:space-x-8">
@@ -125,10 +122,10 @@ export default function Index() {
                   <input
                     id="searchInput"
                     type="text"
-                    placeholder="search"
+                    placeholder=" Search....."
                     className={` ${
                       searchInput ? "hidden" : ""
-                    } text-sm dark:bg-gray-900 dark:placeholder-gray-300 text-gray-600 rounded ml-1 border border-transparent focus:outline-none focus:border-gray-400 px-1`}
+                    } text-sm rounded ml-2 border border-transparent w-[22em] h-[2em] bg-white ring-1 ring-slate-900/10 hover:ring-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-sm text-slate-400 dark:bg-slate-800 dark:ring-0 dark:text-slate-300 dark:highlight-white/5 dark:hover:bg-slate-700`}
                   />
                 </div>
                 <div className="hidden lg:flex items-center space-x-4 xl:space-x-8"></div>
@@ -210,7 +207,7 @@ export default function Index() {
             </div>
           </div>
 
-          {/* For small screen */}
+          {/* For small screen celular */}
           <div
             id="mobile-menu"
             className={`${
@@ -246,8 +243,8 @@ export default function Index() {
                 </div>
                 <input
                   type="text"
-                  placeholder="Search for products"
-                  className="text-sm dark:bg-gray-900 text-gray-600 placeholder-gray-600 dark:placeholder-gray-300 focus:outline-none"
+                  placeholder=" Search Celular"
+                  className="text-sm rounded ml-1 border border-transparent w-[19em] h-[2em] bg-white ring-1 ring-slate-900/10 hover:ring-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-sm text-slate-400 dark:bg-slate-800 dark:ring-0 dark:text-slate-300 dark:highlight-white/5 dark:hover:bg-slate-700"
                 />
               </div>
               <button
