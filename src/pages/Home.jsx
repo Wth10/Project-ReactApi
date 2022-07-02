@@ -6,15 +6,14 @@ export default function Home() {
   const { data, isFetching } = useQuery(
     "filme",
     async () => {
-      const res = await axios.get(
-        "https://api.tvmaze.com/search/shows?q=batman"
-      );
-      console.log(res.data);
+      const url = "https://api.tvmaze.com/search/shows?q=batman";
+      const res = await axios.get(url);
+
       return res.data;
     },
     {
-      refetchOnWindowFocus: false,
-      staleTime: 5000 * 60, // 5 minute
+      refetchOnWindowFocus: true,
+      staleTime: 1000 * 60, // 1 minute
     }
   );
 
@@ -47,7 +46,7 @@ export default function Home() {
                 </div>
                 <div class="flex items-baseline mt-4 mb-6 pb-6 border-b border-slate-200">
                   <div class="space-x-2 flex text-sm">
-                    <div class="space-x-3 flex text-sm font-medium  underline underline-offset-8 decoration-sky-500">
+                    <div class="space-x-3 flex text-sm font-medium underline underline-offset-8 decoration-sky-500">
                       <p>
                         <strong>Genero: </strong>
                         <span className="boring-text">{x.show.genres[0]}</span>
@@ -58,11 +57,12 @@ export default function Home() {
                   </div>
                 </div>
                 <div class="flex space-x-4 mb-6 text-sm font-medium">
-                  <div class="flex-auto flex space-x-4"></div>
+                  <div class="flex-auto flex space-x-4">
+                    <p class="text-sm text-slate-300">
+                      <article>{x.show.summary}</article>
+                    </p>
+                  </div>
                 </div>
-                <p class="text-sm text-slate-300">
-                  <article>{x.show.summary}</article>
-                </p>
               </form>
             </div>
           </ul>
