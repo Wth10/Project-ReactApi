@@ -4,18 +4,18 @@
 
 About the project...
 
-Progress 🟩
+Progress🟩
 
 - [x] Designer
 - [ ] Css
 - [ ] Search
 
-Ideas 🟨
+Ideas🟨
 
 - [x] Show details of a movie by `ID`, in another `Details` page
 
-Errors 🟥
+Errors🟥
 
-<center>⚠ the site may contain some recurring errors as it is not complete ⚠</center>
+<p align="center">⚠ the site may contain some recurring errors as it is not complete ⚠</p>
 
 - [x] ...
