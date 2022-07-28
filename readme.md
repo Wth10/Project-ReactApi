@@ -4,16 +4,16 @@
 
 About the project...
 
-Progress🟩:
+Progress -> 🟩
 
-- [✅] Designer
+- [x] Designer
 - [ ] Css
 - [ ] Search
 
-Ideas🟨:
+Ideas -> 🟨:
 
-- [✅] Show details of a movie by `ID`, in another `Details` page
+- [x] Show details of a movie by `ID`, in another `Details` page
 
-Errors🟥:
+Errors -> 🟥:
 
-- [⭕] ...
+- [x] ...
