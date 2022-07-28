@@ -2,17 +2,18 @@
 
 ---
 
-A Fazer:
+About the project...
 
-- Melhorar:
-  - [x] Designer ✅
-  - [ ] Css
-  - [ ] Search
+Progress🟩:
 
-Ideias:
+- [✅] Designer
+- [ ] Css
+- [ ] Search
 
-- [✅] Mostrar detalhes de um filme pelo `ID`, em outra página `Details`
+Ideas🟨:
 
-Erros:
+- [✅] Show details of a movie by `ID`, in another `Details` page
 
-- [✅] Erro `map` na página `Details`
+Errors🟥:
+
+- [⭕] ...
