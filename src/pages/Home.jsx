@@ -1,73 +1,74 @@
 import { useQuery } from "react-query";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import Head from "../components/Head";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const { data, isFetching } = useQuery(
-    "filme",
+    "show",
     async () => {
-      const url = "https://api.tvmaze.com/search/shows?q=batman";
+      const url = "https://api.tvmaze.com/shows";
       const res = await axios.get(url);
-
       return res.data;
     },
     {
-      refetchOnWindowFocus: true,
-      staleTime: 1000 * 60, // 1 minute
+      refetchOnWindowFocus: false,
+      cacheTime: 5 * 60 * 1000, // 5 minute
+      staleTime: 5 * 60 * 1000,
     }
   );
 
   return (
     <>
       <Head />
-
       {isFetching && (
-        <p className="text-emerald-400 text-3xl text-center">Carregando....</p>
+        <div className="m-8 flex items-center justify-center">
+          <span className="inline-flex items-center px-4 py-2 font-semibold leading-6 shadow rounded-md  bg-[#0ea5e9] hover:bg-indigo-400 transition ease-in-out duration-150 cursor-not-allowed">
+            <svg
+              className="animate-spin -ml-2 mr-6 h-10 w-10 text-white"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokewidth="4"
+              ></circle>
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
+            </svg>
+            Carregando
+          </span>
+        </div>
       )}
 
-      {data?.map((x) => {
-        return (
-          <ul className="list-none mt-4 mb-6 pb-6 border-b border-slate-200">
-            <div class="flex font-sans">
-              <div class="flex-none w-48 relative">
-                <img
-                  src={x.show.image.medium}
-                  class="ml-2 absolute inset-0 w-full h-full object-cover"
-                />
+      <div className="m-5 py-12 grid gap-8 grid-cols-6 font-mon text-xs font-bold bg-stripes-purple rounded-lg text-center">
+        {data?.map((x) => {
+          return (
+            <div className="content">
+              <div
+                className="flex-1 p-2 h-full justify-content align-items bg-[#1e293b] shadow-lg rounded-lg hover:bg-blue-600"
+                key={x.id}
+              >
+                <span>
+                  <img className="rounded-lg" src={x.image.medium} />
+                </span>
+                <Link to={`details/${x.id}`}>{x.name}</Link>
               </div>
-              <form class="flex-auto p-6">
-                <div class="flex flex-wrap">
-                  <h1 class="relative w-full flex-none mb-2 text-2xl font-semibold text-white">
-                    {x.show.name}
-                  </h1>
-                  <div class="w-full flex-none text-sm font-medium text-white mt-2 underline underline-offset-8 decoration-sky-500">
-                    <a href={x.show.url}>Detalhes</a>
-                  </div>
-                </div>
-                <div class="flex items-baseline mt-4 mb-6 pb-6 border-b border-slate-200">
-                  <div class="space-x-2 flex text-sm">
-                    <div class="space-x-3 flex text-sm font-medium underline underline-offset-8 decoration-sky-500">
-                      <p>
-                        <strong>Genero: </strong>
-                        <span className="boring-text">{x.show.genres[0]}</span>
-                        <span className="boring-text">{x.show.genres[1]}</span>
-                        <span>{x.show.genres[2]}</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex space-x-4 mb-6 text-sm font-medium">
-                  <div class="flex-auto flex space-x-4">
-                    <p class="text-sm text-slate-300">
-                      <article>{x.show.summary}</article>
-                    </p>
-                  </div>
-                </div>
-              </form>
             </div>
-          </ul>
-        );
-      })}
+          );
+        })}
+      </div>
+
+      <Footer />
     </>
   );
 }

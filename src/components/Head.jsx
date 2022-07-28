@@ -53,10 +53,10 @@ export default function Head() {
 
           {/* For md screen size */}
           {/* For large screens */}
-          <div className="dark:bg-gray-900 bg-gray-50 px-6 py-9  pb-6 border-b border-slate-200">
+          <div className="bg-black px-6 py-9 pb-6">
             <div className="container mx-auto flex items-center justify-between">
-              <h1 className="md:w-2/12 font-mono text-2xl cursor-pointer text-gray-800 dark:text-white">
-                Listar De Filmes
+              <h1 className="md:w-2/12 font-consolas  text-2xl cursor-pointer text-gray-800 dark:text-white">
+                DEV.MOVIE
               </h1>
               <ul className="hidden w-8/12 md:flex items-center justify-center space-x-8">
                 <li>
@@ -72,62 +72,30 @@ export default function Head() {
                     to="/search"
                     className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
                   >
-                    Search
+                    Pesquisa Filme
                   </Link>
                 </li>
                 <li>
+                  <Link
+                    to="/teste"
+                    className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
+                  ></Link>
+                </li>
+                <li>
                   <a
-                    href="javascript:void(0)"
+                    href=""
                     className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
                   ></a>
                 </li>
                 <li>
                   <a
-                    href="javascript:void(0)"
+                    href=""
                     className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
                   ></a>
                 </li>
               </ul>
               <div className="md:w-2/12 justify-end flex items-center space-x-4 xl:space-x-8">
-                <div className="hidden lg:flex items-center">
-                  <button
-                    onClick={() => setSearchInput(!searchInput)}
-                    aria-label="search items"
-                    className="text-gray-800 dark:hover:text-gray-300 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800"
-                  >
-                    <svg
-                      className="fill-stroke"
-                      width={24}
-                      height={24}
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M5 11C5 15.4183 8.58172 19 13 19C17.4183 19 21 15.4183 21 11C21 6.58172 17.4183 3 13 3C8.58172 3 5 6.58172 5 11Z"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M2.99961 20.9999L7.34961 16.6499"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </button>
-                  <input
-                    id="searchInput"
-                    type="text"
-                    placeholder=" Search....."
-                    className={` ${
-                      searchInput ? "hidden" : ""
-                    } text-sm rounded ml-2 border border-transparent w-[22em] h-[2em] bg-white ring-1 ring-slate-900/10 hover:ring-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-sm text-slate-400 dark:bg-slate-800 dark:ring-0 dark:text-slate-300 dark:highlight-white/5 dark:hover:bg-slate-700`}
-                  />
-                </div>
+                <div className="hidden lg:flex items-center"></div>
                 <div className="hidden lg:flex items-center space-x-4 xl:space-x-8"></div>
                 <div className="flex lg:hidden">
                   <button
@@ -279,7 +247,7 @@ export default function Head() {
               <ul className="flex flex-col space-y-6">
                 <li>
                   <a
-                    href="javascript:void(0)"
+                    href=""
                     className="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
                   >
                     Home
@@ -305,7 +273,7 @@ export default function Head() {
                 </li>
                 <li>
                   <a
-                    href="javascript:void(0)"
+                    href=""
                     className="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
                   >
                     Furniture
@@ -331,7 +299,7 @@ export default function Head() {
                 </li>
                 <li>
                   <a
-                    href="javascript:void(0)"
+                    href=""
                     className="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
                   >
                     Lookbook
@@ -357,7 +325,7 @@ export default function Head() {
                 </li>
                 <li>
                   <a
-                    href="javascript:void(0)"
+                    href=""
                     className="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
                   >
                     Support
