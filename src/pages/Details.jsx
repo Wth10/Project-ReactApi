@@ -48,12 +48,15 @@ export default function Details() {
       {Array.isArray(data)
         ? data?.map((x) => {
             return (
-              <ul className="list-none mt-4 mb-6 pb-6 border-b border-slate-200">
+              <ul
+                className="list-none mt-4 mb-6 pb-6 container mx-auto items-center justify-between"
+                key={x.id}
+              >
                 <div class="flex font-sans">
-                  <div class="flex-none w-48 relative">
+                  <div class="flex-none w-[15em] relative">
                     <img
-                      src={x.image.medium}
-                      class="ml-2 absolute inset-0 w-full h-full object-cover"
+                      src={x.image.original}
+                      class=" absolute inset-0 object-cover rounded-lg"
                     />
                   </div>
                   <form class="flex-auto p-6">
@@ -69,7 +72,7 @@ export default function Details() {
                       <div class="space-x-2 flex text-sm">
                         <div class="space-x-3 flex text-sm font-medium underline underline-offset-8 decoration-sky-500">
                           <p>
-                            <strong>Genero: </strong>
+                            <strong>Gênero: </strong>
                             <span className="boring-text">{x.genres[0]}</span>
                             <span className="boring-text">{x.genres[1]}</span>
                             <span>{x.genres[2]}</span>
@@ -79,8 +82,10 @@ export default function Details() {
                     </div>
                     <div class="flex space-x-4 mb-6 text-sm font-medium">
                       <div class="flex-auto flex space-x-4">
-                        <p class="text-sm text-slate-300">
-                          <article>{x["summary"]}</article>
+                        <p class="text-sm text-slate-300 indent-8 ">
+                          <span
+                            dangerouslySetInnerHTML={{ __html: x["summary"] }}
+                          ></span>
                         </p>
                       </div>
                     </div>

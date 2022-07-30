@@ -64,7 +64,7 @@ export default function Head() {
                     to="/"
                     className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
                   >
-                    Home
+                    Lista De Filmes
                   </Link>
                 </li>
                 <li>

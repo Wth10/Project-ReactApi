@@ -6,13 +6,14 @@ About the project...
 
 Progress🟩
 
-- [x] Designer
-- [ ] Css
-- [ ] Search
+- [x] designer desktop
+- [ ] mobile responsive css
+- [ ] search by movie
 
 Ideas🟨
 
 - [x] Show details of a movie by `ID`, in another `Details` page
+- [ ] Make pagination on the `home` page
 
 Errors🟥
 

@@ -50,7 +50,7 @@ export default function Home() {
         </div>
       )}
 
-      <div className="m-5 py-12 grid gap-8 grid-cols-6 font-mon text-xs font-bold bg-stripes-purple rounded-lg text-center">
+      <div className="m-5 py-12 container mx-auto items-center justify-between grid gap-8 grid-cols-6 font-mon text-xs font-bold bg-stripes-purple rounded-lg text-center">
         {data?.map((x) => {
           return (
             <div className="content">
